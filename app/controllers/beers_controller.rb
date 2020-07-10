@@ -1,11 +1,11 @@
 class BeersController < ApplicationController
 
     def index
-
+        @beer= Beer.all
     end
 
     def show
-
+        @beer= Beer.find_by(id: params[:id])
     end
 
     def new
@@ -13,7 +13,8 @@ class BeersController < ApplicationController
     end
 
     def create
-
+        beer= Beer.create(beer_params)
+        redirect_to beers_path(beer)
     end
 
     private
