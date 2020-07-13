@@ -2,5 +2,6 @@
 
 <%= @beers.each do |beer| %>
     <%= beer.name %><br>
+    <%= link_to "#{beer.name}", beer_path(beer) %><br>
 
 <% end %>
