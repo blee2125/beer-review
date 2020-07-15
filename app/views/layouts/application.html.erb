@@ -12,6 +12,7 @@
     <%= link_to 'Home', root_url %>
 
     <% if current_user %>
+      <%= link_to 'User Profile', user_path(current_user.id) %>
       <%= link_to 'Log Out', session_path, method: 'delete' %>
       <%= link_to 'New Beer', new_beer_path(@beer) %>
     <% end %>
