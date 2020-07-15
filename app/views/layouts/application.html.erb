@@ -8,9 +8,19 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-    <%= link_to 'New User', new_user_path(@user) %>
-    <%= link_to 'New Beer', new_beer_path(@beer) %>
     <%= link_to 'Beer Index', beers_path(@beers) %>
+    <%= link_to 'Home', root_url %>
+
+    <% if current_user %>
+      <%= link_to 'Log Out', session_path, method: 'delete' %>
+      <%= link_to 'New Beer', new_beer_path(@beer) %>
+    <% end %>
+    <% if !current_user %>
+      <%= link_to 'Log In', signin_path %>
+      <%= link_to 'New User', new_user_path(@user) %>
+    <% end %>
+
+
     
 
   <body>
