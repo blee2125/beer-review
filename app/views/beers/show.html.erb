@@ -1,5 +1,9 @@
 <h1>show beer</h1>
 
     <h3>Name - <%= @beer.name %></h3>
-    <%= @beer.brewery %>
-    <%= params %>
+    <%= @beer.brewery %><br>
+
+    <%= link_to 'New Comment', new_beer_comment_path(@comment.beer_id, @beer) %><br>
+    <% @beer.comments.each do |comment| %>
+        <%= comment.comment %>
+    <% end %>
