@@ -1,6 +1,6 @@
 <h1>Beer Index</h1>
 
-<%= @beers.each do |beer| %>
+<% @beers.each do |beer| %>
     <%= beer.name %><br>
     <%= link_to "#{beer.name}", beer_path(beer) %><br>
 
