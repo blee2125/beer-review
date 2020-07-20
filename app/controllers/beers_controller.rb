@@ -6,6 +6,7 @@ class BeersController < ApplicationController
 
     def show
         @beer= Beer.find_by(id: params[:id])
+        @comment= @beer.comments.build(user_id: current_user.id)
     end
 
     def new
