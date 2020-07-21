@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
 
     def index
-        @beer= Beer.find_by(params[:id])
-        @comments= @beer.comments
+        @beer= Beer.find_by(id: params[:beer_id])
+        @comments= Comment.find_by(beer_id: params[:beer_id])
     end
 
     def show
@@ -11,15 +11,18 @@ class CommentsController < ApplicationController
 
     def new
         @beer= Beer.find_by(params[:id])
-        
-        @comment= Comment.new
+        @comment= @beer.comments.build
     end
 
     def create
         @user= current_user.id
-        new_comment= Comment.new(comment: params[:comment][:comment], beer_id: params[:beer_id], user_id: @user)
-        new_comment.save
-        redirect_to beer_comments_path
+        @comment= Comment.create(comment_params)
+        if @comment.save
+            @beer= Beer.find_by(id: params[:beer_id])
+            redirect_to beer_comments_path(@beer)
+        else
+            render :new
+        end
     end
 
     private
