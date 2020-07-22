@@ -6,7 +6,7 @@ class BeersController < ApplicationController
 
     def show
         @beer= Beer.find_by(id: params[:id])
-        @comment= @beer.comments.build(user_id: current_user.id)
+        @comment= @beer.comments
     end
 
     def new
@@ -21,7 +21,7 @@ class BeersController < ApplicationController
     private
 
     def beer_params
-        params.require(:beer).permit(:name, :brewery, :origin, :style, :abv)
+        params.require(:beer).permit(:name, :brewery, :origin, :style, :abv, :id)
     end
     
 end
