@@ -1,0 +1,12 @@
+<h1>Comments</h1>
+
+<%= link_to 'New Comment', new_beer_comment_path(@beer) %><br>
+
+
+
+<% @beer.comments.each do |comment| %>
+    <p><a href="<%= user_path(comment[:user_id]) %>"><%= comment.user.name %></a> - <%= comment.comment %></p><br>
+    
+    
+<% end %>
+
