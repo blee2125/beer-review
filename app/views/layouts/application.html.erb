@@ -24,6 +24,12 @@
   <% end %> 
  
 
+  <% flash.each do |type, message| %>
+    <div class="notification">
+      <%= message %>
+    </div>
+  <% end %>
+
   <body>
     <section class="section">
       <div class="content">
@@ -34,15 +40,3 @@
 </html>
 
 
-<%= link_to 'Beer Index', beers_path(@beers) %>
-<%= link_to 'Home', root_url %>
-
-<% if current_user %>
-  <%= link_to 'User Profile', user_path(current_user.id) %>
-  <%= link_to 'Log Out', session_path, method: 'delete' %>
-  <%= link_to 'New Beer', new_beer_path(@beer) %>
-<% end %>
-<% if !current_user %>
-  <%= link_to 'Log In', signin_path %>
-  <%= link_to 'New User', new_user_path(@user) %>
-<% end %> 
