@@ -7,7 +7,7 @@
     <div class="box">
         <% @beer.comments.each do |comment| %>
             <div class="box" id="commentbox">
-                <p><a href="<%= user_path(comment[:user_id]) %>"><%= comment.user.name %></a> - <%= comment.comment %></p><br>
+                <p><a href="<%= user_path(comment[:user_id]) %>"><%= comment.user.username %></a> - <%= comment.comment %></p><br>
             </div>
         <% end %>
     </div>
