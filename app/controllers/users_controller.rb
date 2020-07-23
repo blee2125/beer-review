@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     def create
         if user= User.create(user_params)
             session[:user_id] = user.id
+            flash[:alert]= "new user created"
             redirect_to user_path(user)
         else
             render 'new'
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
 
     def show
         @user= User.find_by(id: params[:id])
+        @beer= Beer.find_by(id: params[:id])
     end
 
     private
