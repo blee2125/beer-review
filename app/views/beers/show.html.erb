@@ -1,12 +1,13 @@
 <h1>show beer</h1>
 
+<div class="box">
     <h3>Name - <%= @beer.name %></h3>
     <h4>Brewery - <%= @beer.brewery %><br></h4>
+    <h4>Origin - <%= @beer.origin %><br></h4>
+    <h4>Style - <%= @beer.style %><br></h4>
+    <h4>ABV - <%= @beer.abv %>%<br></h4>
+</div>
 
-    <%= link_to 'New Comment', new_beer_comment_path(@beer) %><br>
-    <%= link_to 'See Comments', beer_comments_path(@beer) %><br>
+<a class="button" href="<%= beer_comments_path(@beer) %>">Comments</a>
 
-    <% #add '=' to turn on list of comments %>
-    <% @beer.comments.each do |comment| %>
-        <% comment.comment %><br>
-    <% end %>
+
