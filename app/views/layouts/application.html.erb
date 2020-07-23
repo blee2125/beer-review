@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-    
+  <div class="box">  
   <a class="button" href="/">Home</a>
   <a class="button" href="<%= beers_path(@beers) %>">Beer Index</a>
 
@@ -22,7 +22,7 @@
     <a class="button" href="<%= signin_path %>">Log In</a>
     <a class="button" href="<%= new_user_path(@user) %>">New User</a>
   <% end %> 
- 
+  </div>
 
   <% flash.each do |type, message| %>
     <div class="notification">

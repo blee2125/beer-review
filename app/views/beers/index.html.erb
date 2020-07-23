@@ -1,7 +1,10 @@
 <h1>Beer Index</h1>
 
-<% @beers.each do |beer| %>
-    <%= beer.name %><br>
-    <%= link_to "#{beer.name}", beer_path(beer) %><br>
-
-<% end %>
+    <div class="box">
+        <% @beers.each do |beer| %>
+        <div class="box" id="commentbox">
+            <%= beer.name %><br>
+            <%= link_to "#{beer.name}", beer_path(beer) %><br>
+        </div>
+        <% end %>
+    </div>

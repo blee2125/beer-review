@@ -1,3 +1,15 @@
-<h1>User show</h1>
+<h1>User Profile</h1>
 
-    <%= @user.name %>
+    <h3>name: <%= @user.username %><br></h3>
+
+    <h3>location: <%= @user.location %><br></h3>
+
+    <div class="box">
+        <h3><%= @user.username %>'s comments</h3>
+        <div class="box" id="commentbox">
+            <% @user.comments.each do |comment| %>
+                <p><a href="<%= beer_path(comment[:beer_id]) %>"><%= comment.beer.name %></a> - <%= comment.comment %></p><br>
+
+            <% end %>
+        </div>
+    </div>
