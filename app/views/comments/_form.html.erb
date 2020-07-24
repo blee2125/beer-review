@@ -1,11 +1,16 @@
-<%= form_for @comment, url: beer_comments_path  do |f| %>
+<div class="box">
+<%= form_for @comment, url: beer_comments_path, html: {id: "newcomment"}  do |f| %>
 
     <%= f.hidden_field :beer_id, value: params[:beer_id] %>
     <%= f.hidden_field :user_id, value: current_user.id %>
 
-    <%= f.label :comment, "Comment" %>
+    <div class="field">
+    <%= f.label :comment, "Comment" %><br>
+    <div class="control">
     <%= f.text_area :comment %><br>
+    </div></div>
 
-    <%= f.submit %>
+    <%= f.submit 'New Comment', class: 'button' %>
 
 <% end %>
+</div>

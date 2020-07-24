@@ -1,12 +1,18 @@
-<%= form_tag('/session', method: :post) do %>
+<div class="box">
+    <%= form_tag('/session', method: :post) do %>
+        <div class="field">  
+            <%= label_tag(:username, "Username:") %>
+        <div class="control">
+            <%= text_field_tag(:username) %><br>
+        </div></div>
 
-    <%= label_tag(:username, "Username:") %>
-    <%= text_field_tag(:username) %><br>
+        <div class="field">
+            <%= label_tag(:password, "Password:") %>
+        <div class="control">
+            <%= password_field_tag(:password) %><br>
+        </div></div>
 
-    <%= label_tag(:password, "Password:") %>
-    <%= password_field_tag(:password) %><br>
+        <%= submit_tag("Sign In", class: 'button') %>
 
-
-    <%= submit_tag("Sign In") %>
-
-<% end %>
+    <% end %>
+</div>
