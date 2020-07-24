@@ -55,3 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #bulma for css
 gem "bulma-rails", "~> 0.9.0"
+
+gem "omniauth"
+gem "omniauth-facebook"
+gem "dotenv-rails"
