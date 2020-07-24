@@ -1,12 +1,12 @@
 <div class="box">
-<h2>show beer</h2>
+<h2><%= @beer.name %></h2>
 
 <div class="box">
-    <h3>Name - <%= @beer.name %></h3>
-    <h4>Brewery - <%= @beer.brewery %><br></h4>
-    <h4>Origin - <%= @beer.origin %><br></h4>
-    <h4>Style - <%= @beer.style %><br></h4>
-    <h4>ABV - <%= @beer.abv %>%<br></h4>
+    <p>Name - <%= @beer.name %></p>
+    <p>Brewery - <%= @beer.brewery %><br></p>
+    <p>Origin - <%= @beer.origin %><br></p>
+    <p>Style - <%= @beer.style %><br></p>
+    <p>ABV - <%= @beer.abv %>%<br></p>
 </div>
 
 <a class="button" href="<%= beer_comments_path(@beer) %>">Comments</a>
