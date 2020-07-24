@@ -22,9 +22,10 @@
     background-color: wheat;
 }
 .button {
-    background-color: darkgoldenrod;
-    border-color: black;
-    color: navajowhite;
+    background-color: darksalmon;
+    color: #3273dc;
+    border-radius: 0em;
+    border-width: 0em;
 }
 div#commentbox.box {
     background-color: blanchedalmond;
@@ -54,4 +55,11 @@ img {
 }
 .input.newcomment {
     background-color: wheat;
+}
+.section {
+    padding: 1.5rem 1rem;
+    max-width: 800px;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
 }
