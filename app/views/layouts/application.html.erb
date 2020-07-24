@@ -9,20 +9,42 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <div class="box">  
-  <a class="button" href="/">Home</a>
-  <a class="button" href="<%= beers_path(@beers) %>">Beer Index</a>
 
-  <% if current_user %>
-    <a class="button" href="<%= user_path(current_user.id) %>">User Profile</a>
-    <a class="button" href="<%= logout_path %>">Log Out</a>
-    <a class="button" href="<%= new_beer_path(@beer) %>">New Beer</a>
-  <% end %>
-  <% if !current_user %>
-    <a class="button" href="<%= signin_path %>">Log In</a>
-    <a class="button" href="<%= new_user_path(@user) %>">New User</a>
-  <% end %> 
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <%= link_to image_tag("beerbottle.png") %>
+    </a>
+  
+
+  
+      <div class="navbar-item">
+          <a class="button" href="/">Home</a>
+      </div>
+      <div class="navbar-item">
+          <a class="button" href="<%= beers_path(@beers) %>">Beer Index</a>
+      </div>
+        <% if current_user %>
+        <div class="navbar-item">
+          <a class="button" href="<%= user_path(current_user.id) %>">User Profile</a>
+        </div>
+        <div class="navbar-item">
+          <a class="button" href="<%= logout_path %>">Log Out</a>
+        </div>
+        <% end %>
+        <% if !current_user %>
+        <div class="navbar-item">
+          <a class="button" href="<%= signin_path %>">Log In</a>
+        </div>
+        <div class="navbar-item">
+          <a class="button" href="<%= new_user_path(@user) %>">Sign Up</a>
+        </div>
+        <% end %>
+
+      
   </div>
+</nav>
+
 
   <% flash.each do |type, message| %>
     <div class="notification">
