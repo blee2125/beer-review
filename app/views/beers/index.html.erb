@@ -1,5 +1,7 @@
-<h1>Beer Index</h1>
+<div class="box">
+<h2>Beer Index</h2>
 
+<a class="button" href="<%= new_beer_path(@beer) %>">New Beer</a>
     <div class="box">
         <% @beers.each do |beer| %>
         <div class="box" id="commentbox">
@@ -8,3 +10,4 @@
         </div>
         <% end %>
     </div>
+</div>
