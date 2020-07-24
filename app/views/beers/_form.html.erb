@@ -1,20 +1,37 @@
+<div class="box">
 <%= form_for @beer do |f| %>
 
-    <%= f.label :name, "Name" %>
-    <%= f.text_field :name %><br>
+    <div class="field">
+        <%= f.label :name, "Name" %>
+    <div class="control">
+        <%= f.text_field :name %><br>
+    </div></div>
 
-    <%= f.label :brewery, "Brewery" %>
-    <%= f.text_field :brewery %><br>
+    <div class="field">
+        <%= f.label :brewery, "Brewery" %>
+    <div class="control">
+        <%= f.text_field :brewery %><br>
+    </div></div>
 
-    <%= f.label :origin, "Origin" %>
-    <%= f.text_field :origin %><br>
+    <div class="field">
+        <%= f.label :origin, "Origin" %>
+    <div class="control">
+        <%= f.text_field :origin %><br>
+    </div></div>
 
-    <%= f.label :style, "Style" %>
-    <%= f.text_field :style %><br>
+    <div class="field">
+        <%= f.label :style, "Style" %>
+    <div class="control">
+        <%= f.text_field :style %><br>
+    </div></div>
 
-    <%= f.label :abv, "ABV" %>
-    <%= f.number_field :abv %><br>
+    <div class="field">
+        <%= f.label :abv, "ABV" %>
+    <div class="control">
+        <%= f.number_field :abv %>%<br>
+    </div></div>
 
     <%= f.submit %>
 
 <% end %>
+</div>
