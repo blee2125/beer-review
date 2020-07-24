@@ -15,6 +15,7 @@ class BeersController < ApplicationController
 
     def create
         beer= Beer.create(beer_params)
+        flash[:alert]= "NEW BEER CREATED"
         redirect_to beers_path(beer)
     end
 
