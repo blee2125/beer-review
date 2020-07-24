@@ -23,6 +23,7 @@
 }
 .button {
     background-color: darkgoldenrod;
+    border-color: black;
     color: navajowhite;
 }
 div#commentbox.box {
@@ -36,6 +37,21 @@ textarea {
 }
 
 input {
-    background-color: darkgoldenrod;
-    color: navajowhite;
+    background-color: wheat;
+    color: black;
+}
+img {
+    height: auto;
+    width: auto;
+    max-height: 50px;
+}
+.navbar-item {
+    width: fit-content;
+    padding: 0px;
+}
+.navbar {
+    background-color: wheat;
+}
+.input.newcomment {
+    background-color: wheat;
 }
