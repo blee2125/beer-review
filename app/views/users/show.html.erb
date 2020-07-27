@@ -5,6 +5,8 @@
 
     <p>location: <%= @user.location %><br></p>
 
+    <a class="button" href="<%= edit_user_path(@user) %>">Edit Profile</a><br>
+
     <div class="box">
         <h3><%= @user.username %>'s comments</h3>
         <div class="box" id="commentbox">
