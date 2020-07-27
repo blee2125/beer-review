@@ -1,5 +1,5 @@
 class SessionController < ApplicationController
-    skip_before_action :verified_user, only: [:new, :create]
+    skip_before_action :verified_user, only: [:new, :create, :omniauth]
 
     def new
         @user= User.new
@@ -21,5 +21,28 @@ class SessionController < ApplicationController
         flash[:alert]= "YOU ARE LOGGED OUT"
         redirect_to root_path
     end
+
+    def omniauth
+        @user = User.find_or_create_by(id: auth[:'uid']) do |u|
+            u.username= auth['extra']['raw_info']['username']
+            u.name= auth['info']['name']
+            u.email= auth['info']['email']
+            u.id= auth['extra']['raw_info']['id']
+            u.password= SecureRandom.hex
+        end
+        if @user.save
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
+        else
+            redirect_to signin_path
+        end
+    end
+
+    private
+
+    def auth
+        request.env['omniauth.auth']
+    end
+    
 
 end
