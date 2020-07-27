@@ -19,6 +19,20 @@ class BeersController < ApplicationController
         redirect_to beers_path(beer)
     end
 
+    def edit
+        @beer= Beer.find_by(id: params[:id])
+    end
+
+    def update
+        @beer= Beer.find_by(id: params[:id])
+        if @beer.update(beer_params)
+            flash[:alert]= "BEER UPDATED"
+            redirect_to beer_path(@beer)
+        else
+            render :edit
+        end
+    end
+
     private
 
     def beer_params
