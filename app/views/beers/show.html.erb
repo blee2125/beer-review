@@ -1,21 +1,24 @@
 <div class="box">
 <h2><%= @beer.name %></h2>
 
-    <% if @beer.beer_picture.attached? %>
-    <figure class="beer_picture">
-        <img src="<%= url_for(@beer.beer_picture) %>">
-        
-    </figure>   
-    <% end %>
-    
-    
+<div class="columns">
+    <div class="column">
+    <div class="box">
+        <p>Name - <%= @beer.name %></p>
+        <p>Brewery - <%= @beer.brewery %><br></p>
+        <p>Origin - <%= @beer.origin %><br></p>
+        <p>Style - <%= @beer.style %><br></p>
+        <p>ABV - <%= @beer.abv %>%<br></p>
+    </div>
+    </div>
 
-<div class="box">
-    <p>Name - <%= @beer.name %></p>
-    <p>Brewery - <%= @beer.brewery %><br></p>
-    <p>Origin - <%= @beer.origin %><br></p>
-    <p>Style - <%= @beer.style %><br></p>
-    <p>ABV - <%= @beer.abv %>%<br></p>
+    <div class="column">
+            <% if @beer.beer_picture.attached? %>
+                <figure class="beer_picture">
+                <img src="<%= url_for(@beer.beer_picture) %>" id="beerpic">
+                </figure>
+            <% end %>
+    </div>
 </div>
 
 <a class="button" href="<%= beer_comments_path(@beer) %>">Comments</a>
