@@ -9,15 +9,13 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+<header>
+  <nav class="navbar is-fixed-top">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <%= link_to image_tag("beerbottle.png") %>
+      </a>
 
-<nav class="navbar">
-  <div class="navbar-brand">
-    <a class="navbar-item">
-      <%= link_to image_tag("beerbottle.png") %>
-    </a>
-  
-
-  
       <div class="navbar-item">
           <a class="button" href="/">Home</a>
       </div>
@@ -42,8 +40,9 @@
         <% end %>
 
       
-  </div>
-</nav>
+    </div>
+  </nav>
+</header>
 
 
   <% flash.each do |type, message| %>
