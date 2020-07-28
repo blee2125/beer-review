@@ -5,8 +5,17 @@
     <div class="box">
         <% @beers.each do |beer| %>
         <div class="box" id="commentbox">
-            <%= beer.name %><br>
-            <%= link_to "#{beer.name}", beer_path(beer) %><br>
+        <div class="columns">
+            <div class="column" id="beerpicindex">
+                <% if beer.beer_picture.attached? %>
+                    <img src="<%= url_for(beer.beer_picture) %>" id="beerpicindex">
+                <% end %>
+            </div>
+            <div class="column">
+                <%= beer.name %><br>
+                <%= link_to "#{beer.name}", beer_path(beer) %>
+            </div>
+        </div>
         </div>
         <% end %>
     </div>
