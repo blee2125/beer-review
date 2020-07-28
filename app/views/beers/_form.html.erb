@@ -31,6 +31,12 @@
         <%= f.number_field :abv %>%<br>
     </div></div>
 
+    <div class="field">
+        <%= f.label :beer_picture, "Upload a Picture" %>
+    <div class="control">
+        <%= f.file_field :beer_picture %><br>
+    </div></div>
+
     <%= f.submit %>
 
 <% end %>
