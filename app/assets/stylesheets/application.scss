@@ -27,8 +27,18 @@
     border-radius: 0em;
     border-width: 0em;
 }
+div#beerpicindex.column {
+    max-width: 100px;
+    text-align-last: center;
+}
 div#commentbox.box {
     background-color: blanchedalmond;
+}
+div.column {
+    place-self: center;
+}
+div.navbar-brand {
+    place-content: center;
 }
 textarea {
     width: 300px;
@@ -48,12 +58,21 @@ img {
     width: auto;
     max-height: 50px;
 }
+img#beerpic {
+    max-height: 250px;
+}
+img#beerpicindex {
+    max-height: 80px;
+}
 .navbar-item {
     width: fit-content;
     padding: 0px;
 }
 .navbar {
     background-color: wheat;
+}
+nav.navbar.is-fixed-top {
+    place-content: center;
 }
 .input.newcomment {
     background-color: wheat;
