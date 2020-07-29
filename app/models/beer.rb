@@ -6,4 +6,8 @@ class Beer < ApplicationRecord
 
     has_one_attached :beer_picture
     
+    def recommended?
+        self.comments.where(recommend: true).count * 100 / self.comments.count if self.comments.count > 0
+    end
+
 end
