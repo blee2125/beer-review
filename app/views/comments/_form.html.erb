@@ -5,6 +5,15 @@
     <%= f.hidden_field :user_id, value: current_user.id %>
 
     <div class="field">
+    <%= f.label :recommend, "Recommend?" %><br>
+    <div class="control">
+    <%= f.radio_button :recommend, 'true' %>
+    <%= f.label :recommend, "YES" %>
+    <%= f.radio_button :recommend, 'false' %>
+    <%= f.label :recommend, "NO" %>
+    </div></div>
+
+    <div class="field">
     <%= f.label :comment, "Comment" %><br>
     <div class="control">
     <%= f.text_area :comment %><br>
