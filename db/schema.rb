@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_153523) do
+ActiveRecord::Schema.define(version: 2020_07_29_130035) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_153523) do
     t.text "comment"
     t.integer "user_id"
     t.integer "beer_id"
+    t.boolean "recommend"
   end
 
   create_table "ratings", force: :cascade do |t|
