@@ -1,1 +1,21 @@
 <h1>home page</h1>
+
+<div class="columns">
+    <div class="column">
+        <div class="box">
+            <p><STRONG>RANDOM BEER</STRONG></p>
+            <p>Name - <%= @random_beer.name %></p>
+            <p>Brewery - <%= @random_beer.brewery %><br></p>
+            
+            <% if @random_beer.beer_picture.attached? %>
+                <figure class="beer_picture">
+                <img src="<%= url_for(@random_beer.beer_picture) %>" id="beerpicrandom">
+                </figure>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="column">
+            
+    </div>
+</div>
