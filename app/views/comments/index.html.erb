@@ -2,6 +2,7 @@
 <h2>Comments</h2>
 
 <a class="button" href="<%= new_beer_comment_path(@beer) %>">New Comment</a>
+<a class="button" href="<%= beer_path(@beer) %>"><%= "#{@beer.name}" %></a>
 
 
 
@@ -9,6 +10,7 @@
         <% @beer.comments.each do |comment| %>
             <div class="box" id="commentbox">
                 <p><a href="<%= user_path(comment[:user_id]) %>"><%= comment.user.username %></a> - <%= comment.comment %></p><br>
+                Drink again? <%= comment.yesno %>
             </div>
         <% end %>
     </div>
