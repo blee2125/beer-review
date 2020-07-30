@@ -1,7 +1,7 @@
 <div class="box">
-<h2>Beer Index</h2>
+<h2>Beer List</h2>
 
-<a class="button" href="<%= new_beer_path(@beer) %>">New Beer</a>
+
     <div class="box">
         <% @beers.each do |beer| %>
         <div class="box" id="commentbox">
@@ -12,11 +12,15 @@
                 <% end %>
             </div>
             <div class="column">
-                <%= beer.name %><br>
-                <%= link_to "#{beer.name}", beer_path(beer) %>
+                <%= link_to "#{beer.name}", beer_path(beer) %><br>
+                <%= beer.brewery %>
+            </div>
+            <div class="column">
+                <h3><%= beer.recommended? %>%</h3>
             </div>
         </div>
         </div>
         <% end %>
     </div>
+    <a class="button" href="<%= new_beer_path(@beer) %>">New Beer</a>
 </div>
