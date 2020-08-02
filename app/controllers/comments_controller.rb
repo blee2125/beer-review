@@ -25,6 +25,21 @@ class CommentsController < ApplicationController
         end
     end
 
+    def edit
+        @comment= Comment.all.find_by(beer_id: params[:beer_id], user_id: params[:id])
+    end
+
+    def update
+        @comment= Comment.find_by(beer_id: params[:beer_id], user_id: params[:comment][:user_id])
+        if @comment.update(comment_params)
+            flash[:alert]= "COMMENT UPDATED"
+            @beer= Beer.find_by(id: params[:beer_id])
+            redirect_to beer_comments_path(@beer)
+        else
+            render :edit
+        end
+    end
+
     private
 
     def comment_params
