@@ -32,10 +32,11 @@ class SessionController < ApplicationController
         end
         if @user.save
             session[:user_id] = @user.id
-            if @user.username != (nil || "")
-                redirect_to user_path(@user)
-            else
+            if @user.username == nil
+                flash[:alert]= "PLEASE COMPLETE PROFILE"
                 redirect_to edit_user_path(@user)
+            else
+                redirect_to user_path(@user)
             end
         else
             redirect_to signin_path
