@@ -1,5 +1,5 @@
 <div class="box">
-<%= form_for @comment, url: beer_comments_path, html: {id: "newcomment"}  do |f| %>
+<%= form_for @comment, url: beer_comments_path, html: {id: "commentform"}  do |f| %>
 
     <%= f.hidden_field :beer_id, value: params[:beer_id] %>
     <%= f.hidden_field :user_id, value: current_user.id %>
