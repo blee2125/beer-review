@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   delete '/session/', to: 'session#destroy'
   get '/logout', to: 'session#destroy'
   get '/auth/facebook/callback' => 'session#omniauth'
+  patch '/beers/:beer_id/comments', to:  'comments#update'
   
 
   resources :users
