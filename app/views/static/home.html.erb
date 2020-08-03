@@ -1,10 +1,10 @@
-<h1>home page</h1>
+<h1>Beer Review</h1>
 
 <div class="columns">
     <div class="column">
         <div class="box">
             <p><STRONG>RANDOM BEER</STRONG></p>
-            <p>Name - <%= @random_beer.name %></p>
+            <p>Name - <a href="<%= beer_path(@random_beer) %>"><%= @random_beer.name %></a></p>
             <p>Brewery - <%= @random_beer.brewery %><br></p>
             
             <% if @random_beer.beer_picture.attached? %>
