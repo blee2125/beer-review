@@ -14,9 +14,14 @@ class BeersController < ApplicationController
     end
 
     def create
-        beer= Beer.create(beer_params)
-        flash[:alert]= "NEW BEER CREATED"
-        redirect_to beers_path(beer)
+        @beer= Beer.create(beer_params)
+        if @beer.save
+            flash[:alert]= "NEW BEER CREATED"
+            redirect_to beers_path(beer)
+        else
+            @rightbeer= Beer.find_by(name: params[:beer][:name])
+            render :new
+        end
     end
 
     def edit
