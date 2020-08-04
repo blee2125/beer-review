@@ -53,14 +53,6 @@ ActiveRecord::Schema.define(version: 2020_08_04_135501) do
     t.boolean "recommend"
   end
 
-  create_table "ratings", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "rating"
-    t.integer "user_id"
-    t.integer "beer_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
