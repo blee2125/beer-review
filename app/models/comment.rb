@@ -10,4 +10,9 @@ class Comment < ApplicationRecord
         end
     end
 
+    def update_rating_on_beer
+        new_rating= self.beer.recommended
+        self.beer.update(:rating => new_rating)
+    end
+
 end
