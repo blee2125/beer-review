@@ -10,4 +10,8 @@ class Beer < ApplicationRecord
         self.comments.where(recommend: true).count * 100 / self.comments.count if self.comments.count > 0
     end
 
+    def self.sort_by_ratings
+        self.all.where.not(rating: nil).sort_by(&:rating)
+    end
+
 end
