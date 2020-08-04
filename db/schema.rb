@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_210948) do
+ActiveRecord::Schema.define(version: 2020_08_04_135501) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_07_29_210948) do
     t.string "origin"
     t.string "style"
     t.float "abv"
+    t.integer "rating"
   end
 
   create_table "comments", force: :cascade do |t|
