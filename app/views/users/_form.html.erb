@@ -1,7 +1,14 @@
 <div class="box">
 <%= form_for @user do |f| %>
 
-    <div class="field">
+    <% if @user.errors.any? %>
+    <div class="error">
+        Username "<%= @user.username %>" <%= @user.errors.messages[:username].first %>
+        
+    </div>
+    <% end %>
+
+    <div class="field_with_errors">
     <%= f.label :username, "Username" %>
     <div class="control">
     <%= f.text_field :username, required: true %><br>
