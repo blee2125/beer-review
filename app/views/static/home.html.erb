@@ -21,7 +21,7 @@
             <ol>
             <% @top_five_beers.each do |beer| %>
                 <li><%= beer.rating %>%<br>
-                <a href="<%= beer_path(@random_beer) %>"><%= beer.name %></a><br></li>
+                <a href="<%= beer_path(beer) %>"><%= beer.name %></a><br></li>
             <% end %>
             </ol>
         </div>
