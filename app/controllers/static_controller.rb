@@ -3,6 +3,7 @@ class StaticController < ApplicationController
 
     def home
         @random_beer = Beer.all.sample
+        @top_five_beers= Beer.all.sort_by_ratings.reverse.first(5)
     end
 
 end
