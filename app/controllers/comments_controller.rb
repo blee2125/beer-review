@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
     def create
         @comment= Comment.create(comment_params)
         if @comment.save
+            @comment.update_rating_on_beer
             @beer= Beer.find_by(id: params[:beer_id])
             redirect_to beer_comments_path(@beer)
         else
@@ -26,6 +27,7 @@ class CommentsController < ApplicationController
     def update
         @comment= Comment.find_by(beer_id: params[:beer_id], user_id: params[:comment][:user_id])
         if @comment.update(comment_params)
+            @comment.update_rating_on_beer
             flash[:alert]= "COMMENT UPDATED"
             @beer= Beer.find_by(id: params[:beer_id])
             redirect_to beer_comments_path(@beer)
