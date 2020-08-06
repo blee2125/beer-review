@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
     end
 
     def show
-        
         @comment= Comment.find_by(id:params[:id])
     end
 
