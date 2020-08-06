@@ -1,0 +1,12 @@
+<div class="box">
+    <p><STRONG>Are you sure you want to delete?</STRONG></p>
+
+        <div class="box" id="commentbox">
+                <p><a href="<%= user_path(@comment.user.id) %>"><%= @comment.user.username %></a> - <%= @comment.comment %></p><br>
+                Drink again? <%= @comment.yesno %>
+        </div>
+
+    <%= form_tag beer_comment_path(@comment.beer_id,@comment), method: "delete" do %>
+        <%= submit_tag "Delete", class: 'button' %>
+    <% end %>
+</div>
