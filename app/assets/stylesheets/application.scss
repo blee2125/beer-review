@@ -56,8 +56,15 @@ header {
     height: 50px;
 }
 input {
-    background-color: wheat;
+    border: 3px solid #cccccc;
+    padding: 5px;
+    background-color: white;
     color: black;
+}
+input#beer_beer_picture {
+    border: none;
+    padding: none;
+    background-color: wheat;
 }
 img {
     height: auto;
