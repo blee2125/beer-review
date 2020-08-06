@@ -7,7 +7,7 @@
     <div class="field">
     <%= f.label :recommend, "Recommend?" %><br>
     <div class="control">
-    <%= f.radio_button :recommend, 'true' %>
+    <%= f.radio_button :recommend, 'true', required: true %>
     <%= f.label :recommend, "YES" %>
     <%= f.radio_button :recommend, 'false' %>
     <%= f.label :recommend, "NO" %>
