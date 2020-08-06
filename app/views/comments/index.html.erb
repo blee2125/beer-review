@@ -17,6 +17,7 @@
                 Drink again? <%= comment.yesno %>
                 <% if comment.user_id == current_user.id %>
                     <a class="button" href="<%= edit_beer_comment_path(@beer, current_user.id) %>">Edit Comment</a>
+                    <a class="button" href="<%= beer_comment_path(@beer,comment) %>">Delete Comment</a>
                 <% end %>
             </div>
         <% end %>
