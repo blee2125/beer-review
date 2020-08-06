@@ -4,6 +4,11 @@ class CommentsController < ApplicationController
         @beer= Beer.find_by(id: params[:beer_id])
     end
 
+    def show
+        
+        @comment= Comment.find_by(id:params[:id])
+    end
+
     def new
         beer= Beer.find_by(params[:id])
         @comment= beer.comments.build
@@ -33,7 +38,14 @@ class CommentsController < ApplicationController
             redirect_to beer_comments_path(@beer)
         else
             render :edit
+            redirect_to beer_comments_path(@beer)
         end
+    end
+
+    def destroy
+        Comment.find(params[:id]).destroy
+        @beer= Beer.find_by(id:params[:beer_id])
+        redirect_to beer_comments_path(@beer)
     end
 
     private
