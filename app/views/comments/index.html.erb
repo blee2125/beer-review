@@ -1,7 +1,7 @@
 <div class="box">
 <h2>Comments</h2>
 
-<a class="button" href="<%= beer_path(@beer) %>"><%= "#{@beer.name}" %></a>
+<a class="button" href="<%= beer_path(@beer) %>"><%= "Back to #{@beer.name}" %></a>
 
 <% if @beer.comments.find_by(user_id: current_user.id) %>
 
@@ -13,7 +13,7 @@
     <div class="box">
         <% @beer.comments.each do |comment| %>
             <div class="box" id="commentbox">
-                <p><a href="<%= user_path(comment[:user_id]) %>"><%= comment.user.username %></a> - <%= comment.comment %></p><br>
+                <p><a href="<%= user_path(comment[:user_id]) %>"><%= comment.user.username %></a> - <STRONG><%= comment.comment %></STRONG></p><br>
                 Drink again? <%= comment.yesno %>
                 <% if comment.user_id == current_user.id %>
                     <a class="button" href="<%= edit_beer_comment_path(@beer, current_user.id) %>">Edit Comment</a>
