@@ -15,3 +15,16 @@
         </div>
     </div>
 </div>
+<div class="column">
+        <div class="box">
+            <p><STRONG>RANDOM BEER</STRONG></p>
+            <p>Name - <a href="<%= beer_path(@random_beer) %>"><%= @random_beer.name %></a></p>
+            <p>Brewery - <%= @random_beer.brewery %><br></p>
+            
+            <% if @random_beer.beer_picture.attached? %>
+                <figure class="beer_picture">
+                <img src="<%= url_for(@random_beer.beer_picture) %>" id="beerpicrandom">
+                </figure>
+            <% end %>
+        </div>
+</div>
