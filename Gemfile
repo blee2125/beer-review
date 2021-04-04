@@ -60,3 +60,5 @@ gem "omniauth"
 gem "omniauth-facebook"
 gem "dotenv-rails"
 gem "pg"
+gem 'omniauth-google-oauth2'
+gem 'pry'
