@@ -1,5 +1,9 @@
 # Beer Review
 
+
+![gif one](https://github.com/blee2125/beer-review/blob/master/beer-review-1.gif)
+
+
 Brief Description: This app allows users to upload info and pictures of different beers. With all of the different micro breweries around world, I thought it would be cool to start an app where people can share information on their latest discoveries. They can also leave comments and a recommendation on each beer.
 
 Framework: Ruby on Rails
@@ -20,9 +24,6 @@ To use this app
 3. Setup database(rails db:setup, rails db:migrate).
 4. Install dependencies(bundle install).
 5. Start server from folder(rails s).
-
-![gif one](https://github.com/blee2125/beer-review/blob/master/beer-review-1.gif)
-
 
 Beers and Comments can be [Create, Read, Update, Delete]
 
