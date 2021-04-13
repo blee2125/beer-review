@@ -8,6 +8,8 @@ Brief Description: This app allows users to upload info and pictures of differen
 
 Framework: Ruby on Rails
 
+Language(s): Ruby, HTML, CSS
+
 Database: SQLite or PostgreSQL
 
 Features: 
@@ -17,6 +19,8 @@ Features:
   ->Bulma-Rails(CSS Framework)
 
   ->Active Storage(image upload)
+  
+  ->Bcrypt(password encryption)
 
 To use this app
 1. Clone repo(git clone...).
